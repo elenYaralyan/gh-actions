@@ -1,32 +1,30 @@
-name: Deploy React App
+name: Test
 on: push
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Get the code
+      - name: Get repository code
         uses: actions/checkout@v3
       - name: Install deps
-        run: npm ci
+        run: npm install
       - name: Test app
         run: npm run test
   lint:
-     runs-on: ubuntu-latest
-     steps:
-      - name: Get the code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repository code
         uses: actions/checkout@v3
       - name: Install deps
-        run: npm ci
+        run: npm install
       - name: Lint code
         run: npm run lint
   build:
-       runs-on: ubuntu-latest
-       steps:
-      - name: Get the code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repository code
         uses: actions/checkout@v3
       - name: Install deps
-        run: npm ci
-      - name: Build app
+        run: npm install
+      - name: Build App
         run: npm run build
-      - name: echo Deploying...    
-    
